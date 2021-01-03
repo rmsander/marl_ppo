@@ -11,7 +11,7 @@ via `pip` or `conda`:
 ```
 # Clone repo
 git clone https://github.com/rmsander/marl_ppo.git
-cd marl_ppo
+cd marl_ppo/install
 
 # Option A: Install requirements with pip
 pip install -r requirements.txt
@@ -32,6 +32,10 @@ Then, once ready, run:
 ```
 python3 ppo/ppo_marl.py
 ```
+
+## Paper and Final Presentation
+If you would like to learn more about the theoretical foundations and experiments of this approach, 
+please find the paper in this repository under `paper.pdf`.
 
 ## Citation
 If you find these results or the multi-agent tutorial setup with tf_agents 
