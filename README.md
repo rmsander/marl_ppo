@@ -41,7 +41,7 @@ please find the paper in this repository under `paper.pdf`.
 If you find these results or the multi-agent tutorial setup with tf_agents 
 useful, please consider citing my paper:
 ```
-@unknown{unknown,
+@techreport{autonomousauto20,
 author = {Sander, Ryan},
 year = {2020},
 month = {05},
