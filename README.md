@@ -1,4 +1,9 @@
 # Multi-Agent Proximal Policy Optimization with TF-Agents
+
+![Self Play](readme_img/self_play.gif)
+![Multi Agent](readme_img/multi_agent_video.gif)
+![Car Pushing](readme_img/car_pushing)
+
 This repository contains a Multi-Agent Proximal Policy Optimization
 implementation with TensorFlow-Agents, configured for the 
 [`MultiCarRacing-v0` Gym environment](https://github.com/igilitschenski/multi_car_racing).
