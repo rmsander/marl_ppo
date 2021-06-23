@@ -18,7 +18,6 @@ tensor based arrays.
 import numpy as np
 import tensorflow as tf
 from skimage.transform import resize
-from external.dreamer.tools import encode_gif
 
 # Network and agent creation
 from tf_agents.networks.actor_distribution_network import ActorDistributionNetwork
@@ -28,6 +27,27 @@ from tf_agents.networks.value_rnn_network import ValueRnnNetwork
 from tf_agents.agents.ppo import ppo_agent, ppo_policy
 from tf_agents.specs import tensor_spec
 from tf_agents.trajectories.time_step import TimeStep
+
+# Creating GIF
+from subprocess import Popen, PIPE
+
+def encode_gif(frames, fps):
+  """Function available from https://github.com/google-research/dreamer/blob/master/dreamer/tools/gif_summary.py."""
+  h, w, c = frames[0].shape
+  pxfmt = {1: 'gray', 3: 'rgb24'}[c]
+  cmd = ' '.join([
+      f'ffmpeg -y -f rawvideo -vcodec rawvideo',
+      f'-r {fps:.02f} -s {w}x{h} -pix_fmt {pxfmt} -i - -filter_complex',
+      f'[0:v]split[x][z];[z]palettegen[y];[x]fifo[x];[x][y]paletteuse',
+      f'-r {fps:.02f} -f gif -'])
+  proc = Popen(cmd.split(' '), stdin=PIPE, stdout=PIPE, stderr=PIPE)
+  for image in frames:
+    proc.stdin.write(image.tostring())
+  out, err = proc.communicate()
+  if proc.returncode:
+    raise IOError('\n'.join([' '.join(cmd), err.decode('utf8')]))
+  del proc
+  return out
 
 
 def video_summary(name, video, fps=50, step=0, channels=3):
