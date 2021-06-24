@@ -17,19 +17,21 @@ implementation with TensorFlow-Agents, configured for the
 To use this MARL framework, please see the sections below.
 
 ## Installation
-To install all the necessary dependencies for this repository, you can do so either 
-via `pip` or `conda`:
+To install all the necessary dependencies for this repository, it is recommended
+to use `conda` and `pip`:
 
 ```
 # Clone repo
 git clone https://github.com/rmsander/marl_ppo.git
 cd marl_ppo/install
 
-# Option A: Install requirements with pip
-pip install -r requirements.txt
+# Create and activate conda environment
+conda create -n marl_ppo python=3.7
+conda activate marl_ppo
 
-# Option B: Install requirements with conda
-conda env create -f environment.yml
+# Change to install directory and install packages with pip
+cd install
+pip3 install -r requirements.txt --no-cache-dir
 ```
 
 ## Running the Environment
