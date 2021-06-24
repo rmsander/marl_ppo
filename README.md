@@ -45,6 +45,11 @@ Then, once ready, run:
 python3 ppo/ppo_marl.py
 ```
 
+## Loading Trained Policies
+You can find trained policies for (i) Single-agent, (ii) Multi-Agent, and (iii) Self-Play
+within the `ppo/ppo_policies` directory. To load these policies for use in evaluation or
+pre-training, please see the utility functions and examples in `ppo/load_policies.py.`
+
 ## Paper and Final Presentation
 If you would like to learn more about the theoretical foundations and experiments of this approach, 
 please find the paper in this repository under `paper.pdf`.

@@ -192,6 +192,7 @@ class ObservationWrapper:
 
     def reset(self):
         """ Method for resetting the observed frames. """
+        # Reset the current time step
         if self.num_frames > 1:
             self.frames = [tf.zeros(self.size + (self.num_channels,)) for i in
                                     range(self.num_frames)]  # Used as queue

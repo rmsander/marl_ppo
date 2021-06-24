@@ -1,0 +1,152 @@
+dict_value {
+  fields {
+    key: "collect_data_spec"
+    value {
+      named_tuple_value {
+        name: "Trajectory"
+        values {
+          key: "step_type"
+          value {
+            tensor_spec_value {
+              name: "step_type"
+              shape {
+              }
+              dtype: DT_INT32
+            }
+          }
+        }
+        values {
+          key: "observation"
+          value {
+            tensor_spec_value {
+              name: "observation"
+              shape {
+                dim {
+                  size: 64
+                }
+                dim {
+                  size: 64
+                }
+                dim {
+                  size: 3
+                }
+              }
+              dtype: DT_FLOAT
+            }
+          }
+        }
+        values {
+          key: "action"
+          value {
+            tensor_spec_value {
+              name: "action"
+              shape {
+                dim {
+                  size: 3
+                }
+              }
+              dtype: DT_FLOAT
+            }
+          }
+        }
+        values {
+          key: "policy_info"
+          value {
+            dict_value {
+              fields {
+                key: "loc"
+                value {
+                  tensor_spec_value {
+                    name: "NormalProjectionNetwork_loc"
+                    shape {
+                      dim {
+                        size: 3
+                      }
+                    }
+                    dtype: DT_FLOAT
+                  }
+                }
+              }
+              fields {
+                key: "scale"
+                value {
+                  tensor_spec_value {
+                    name: "NormalProjectionNetwork_scale"
+                    shape {
+                      dim {
+                        size: 3
+                      }
+                    }
+                    dtype: DT_FLOAT
+                  }
+                }
+              }
+            }
+          }
+        }
+        values {
+          key: "next_step_type"
+          value {
+            tensor_spec_value {
+              name: "step_type"
+              shape {
+              }
+              dtype: DT_INT32
+            }
+          }
+        }
+        values {
+          key: "reward"
+          value {
+            tensor_spec_value {
+              name: "reward"
+              shape {
+              }
+              dtype: DT_FLOAT
+            }
+          }
+        }
+        values {
+          key: "discount"
+          value {
+            tensor_spec_value {
+              name: "discount"
+              shape {
+              }
+              dtype: DT_FLOAT
+            }
+          }
+        }
+      }
+    }
+  }
+  fields {
+    key: "policy_state_spec"
+    value {
+      list_value {
+        values {
+          tensor_spec_value {
+            name: "network_state_0"
+            shape {
+              dim {
+                size: 256
+              }
+            }
+            dtype: DT_FLOAT
+          }
+        }
+        values {
+          tensor_spec_value {
+            name: "network_state_1"
+            shape {
+              dim {
+                size: 256
+              }
+            }
+            dtype: DT_FLOAT
+          }
+        }
+      }
+    }
+  }
+}
